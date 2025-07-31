@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/scoobyff/test/main/sitetest.txt', {
+    const response = await fetch('https://raw.githubusercontent.com/scoobyff/test/main/sportsdata.txt', {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
       }
