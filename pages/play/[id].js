@@ -26,14 +26,19 @@ export default function Player() {
         if (!line || line.startsWith('#')) return;
 
         const parts = line.split('|');
+        console.log('Parsing line:', line);
+        console.log('Parts:', parts);
+        
         if (parts.length >= 3) {
-          channels[parts[0]] = {
-            id: parts[0],
-            name: parts[1] || 'Unknown',
-            url: parts[2] || '',
-            user_agent: parts[3] || '',
-            referer: parts[4] || 'https://example.com/'
+          const channelId = parts[0].trim();
+          channels[channelId] = {
+            id: channelId,
+            name: parts[1] ? parts[1].trim() : 'Unknown',
+            url: parts[2] ? parts[2].trim() : '',
+            user_agent: parts[3] ? parts[3].trim() : '',
+            referer: parts[4] ? parts[4].trim() : 'https://example.com/'
           };
+          console.log('Added channel:', channelId, channels[channelId]);
         }
       });
 
